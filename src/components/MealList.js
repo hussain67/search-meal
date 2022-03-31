@@ -5,7 +5,6 @@ import { useGlobalContext } from "../context";
 
 const MealList = () => {
   const { meals, loading } = useGlobalContext();
-  //console.log(meals, 'Hi')
 
   if (loading) {
     return <Loading />;
