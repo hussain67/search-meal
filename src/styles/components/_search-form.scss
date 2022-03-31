@@ -1,0 +1,18 @@
+.search-form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  label {
+    padding-bottom: 1.4rem;
+  }
+  input {
+    align-self: stretch;
+    background-color: $clr-background;
+    border: none;
+    height: 2rem;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}

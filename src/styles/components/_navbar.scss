@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #fff;
+  border-bottom: 2px solid rgb(20, 19, 19);
+  box-shadow: 5px 5px 8px rgb(126, 120, 120);
+  display: flex;
+  justify-content: center;
+  &-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    max-width: 1072px;
+    height: 4.5rem;
+    .logo {
+      width: 7rem;
+      @include atMedium {
+        width: 12rem;
+      }
+    }
+  }
+  &-links {
+    display: flex;
+    li {
+      padding-right: 15px;
+      text-transform: capitalize;
+    }
+  }
+}

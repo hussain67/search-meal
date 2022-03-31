@@ -1,0 +1,33 @@
+.single-meal {
+  display: flex;
+  flex-direction: column;
+
+  @include atMedium {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    column-gap: 2rem;
+  }
+
+  &-img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  p {
+    font-size: 0.7rem;
+    text-align: left;
+    margin-top: 1.6rem;
+    line-height: 1.6;
+  }
+  &-data {
+    background-color: rgb(117, 209, 148);
+    border-radius: 3px;
+    padding: 4px;
+    margin-right: 8px;
+    color: rgb(13, 80, 41);
+    letter-spacing: 0.5px;
+  }
+  &-ingredient {
+    background-color: none;
+    margin-right: 5px;
+  }
+}
