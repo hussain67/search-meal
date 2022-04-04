@@ -1,20 +1,21 @@
 import React, { useState, createContext, useContext, useEffect, useCallback } from "react";
 
-const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-
+//const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+const url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("Miscellaneous");
   const [meals, setMeals] = useState([]);
 
   const fetchMeals = useCallback(async () => {
     setLoading(true);
     try {
       let response = await fetch(`${url}${searchTerm}`);
+      //console.log(response);
       let data = await response.json();
-      // console.log(data);
+      //console.log(data);
       let { meals } = data;
       if (meals) {
         const newMeals = meals.map(meal => {

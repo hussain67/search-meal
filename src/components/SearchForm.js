@@ -1,33 +1,35 @@
-import React from 'react'
-import { useGlobalContext } from '../context'
+import React, { useState } from "react";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { useGlobalContext } from "../context";
 
 const SearchForm = () => {
-  const { setSearchTerm } = useGlobalContext()
-  const searchValue = React.useRef('')
+  const { setSearchTerm } = useGlobalContext();
 
-  React.useEffect(() => {
-    searchValue.current.focus()
-  }, [])
+  const [userInput, setUserInput] = useState("");
 
-  const searchMeal = () => {
-    setSearchTerm(searchValue.current.value)
-  }
+  const searchMeal = e => {
+    e.preventDefault();
+    setSearchTerm(userInput);
+  };
   return (
     <section className="section-search">
-      <form className="search-form" action="">
+      <form className="search-form" action="" onSubmit={searchMeal}>
         <div className="search-form-control">
           <label htmlFor="name">search your favourate mill</label>
           <input
-            type="text"
+            value={userInput}
+            autoFocus
+            type="search"
             id="name"
-            ref={searchValue}
-            onChange={searchMeal}
+            onChange={e => {
+              setUserInput(e.target.value);
+            }}
           />
         </div>
-
       </form>
     </section>
-  )
-}
+  );
+};
 
-export default SearchForm
+export default SearchForm;

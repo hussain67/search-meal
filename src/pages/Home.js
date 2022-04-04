@@ -1,14 +1,14 @@
-import React from 'react'
-import MealList from '../components/MealList'
-import SearchForm from '../components/SearchForm'
+import React from "react";
+import MealList from "../components/MealList";
+import SearchByCategory from "../components/SearchByCategory";
 
 const Home = () => {
   return (
     <div>
-      <SearchForm />
+      <SearchByCategory />
       <MealList />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
