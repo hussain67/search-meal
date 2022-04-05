@@ -1,6 +1,5 @@
 import React, { useState, createContext, useContext, useEffect, useCallback } from "react";
 
-//const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 const AppContext = createContext();
 
