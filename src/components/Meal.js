@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Meal = ({ meal }) => {
   const { id, name, catagory, thumb } = meal;
   return (
-    <article className="meal-item">
+    <article className="meals-item">
       <img src={thumb} alt="Meal-picture" />
-      <div className="meal-item-info">
+      <div className="meals-item-info">
         <h2>{name}</h2>
         <h3>{catagory}</h3>
         <Link to={`/meal/${id}`}>

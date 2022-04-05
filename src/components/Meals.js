@@ -10,12 +10,12 @@ const MealList = () => {
     return <Loading />;
   }
   if (meals.length < 1) {
-    return <h2 className="section-title">No Meals matched your criteria</h2>;
+    return <h2 className="page-section-title">No Meals matched your criteria</h2>;
   }
   return (
     <section className="seaction-mealList">
-      <h1 className="section-title"> Meals</h1>
-      <div className="meal">
+      <h1 className="page-section-title"> Meals</h1>
+      <div className="meals">
         {meals.map(meal => {
           return <Meal meal={meal} key={meal.id} />;
         })}

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../components/Loading";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 
-function SingleMeal() {
-  const { id } = useParams();
+function SingleMeal({ id }) {
   const [isLoading, setIsLoading] = useState(true);
   const [meal, setMeal] = useState(null);
 

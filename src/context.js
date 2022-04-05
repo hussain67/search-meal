@@ -6,16 +6,16 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("Miscellaneous");
+  const [searchTerm, setSearchTerm] = useState("Chicken");
   const [meals, setMeals] = useState([]);
 
   const fetchMeals = useCallback(async () => {
     setLoading(true);
     try {
       let response = await fetch(`${url}${searchTerm}`);
-      //console.log(response);
+
       let data = await response.json();
-      //console.log(data);
+
       let { meals } = data;
       if (meals) {
         const newMeals = meals.map(meal => {
@@ -44,7 +44,7 @@ const AppProvider = ({ children }) => {
     fetchMeals();
   }, [searchTerm, fetchMeals]);
 
-  return <AppContext.Provider value={{ loading, searchTerm, meals, setSearchTerm }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ loading, setLoading, searchTerm, meals, setSearchTerm }}>{children}</AppContext.Provider>;
 };
 // make sure use
 export const useGlobalContext = () => {

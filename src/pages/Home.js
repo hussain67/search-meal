@@ -1,12 +1,12 @@
 import React from "react";
-import MealList from "../components/MealList";
+import Meals from "../components/Meals";
 import SearchByCategory from "../components/SearchByCategory";
 
 const Home = () => {
   return (
     <div>
       <SearchByCategory />
-      <MealList />
+      <Meals />
     </div>
   );
 };

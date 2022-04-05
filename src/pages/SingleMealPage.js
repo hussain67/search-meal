@@ -1,8 +1,14 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import SingleMeal from "../components/SingleMeal";
 
 const SingleMealPage = () => {
-  return <SingleMeal />;
+  const { id } = useParams();
+  return (
+    <>
+      <SingleMeal id={id} />
+    </>
+  );
 };
 
 export default SingleMealPage;
