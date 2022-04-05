@@ -5,7 +5,7 @@ const Meal = ({ meal }) => {
   const { id, name, catagory, thumb } = meal;
   return (
     <article className="meals-item">
-      <img src={thumb} alt="Meal-picture" />
+      <img src={thumb} alt="" />
       <div className="meals-item-info">
         <h2>{name}</h2>
         <h3>{catagory}</h3>
